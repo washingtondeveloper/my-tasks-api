@@ -8,4 +8,8 @@ require("./config/db");
 app.use(express.json());
 app.use("/api", require("./routes"));
 
-app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+}
+
+module.exports = app;

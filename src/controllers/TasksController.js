@@ -1,6 +1,6 @@
 class TasksController {
   async index(req, res) {
-    return res.json({ message: "List of tasks", user: req.userid });
+    return await res.json({ message: "List of tasks", user: req.userid });
   }
 
   async store(req, res) {}
